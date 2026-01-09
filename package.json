@@ -1,0 +1,33 @@
+{
+  "name": "sanvito-bar-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"tsc -w\" \"nodemon build/server.js\"",
+    "start": "node build/server.js"
+  },
+  "keywords": [],
+  "author": "Diyor Rakhimov",
+  "email": "mr.rakhimov@mail.com",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@fastify/cors": "^8.3.0",
+    "@fastify/multipart": "^8.1.0",
+    "@fastify/static": "^6.10.2",
+    "@fastify/swagger": "^8.8.0",
+    "@fastify/swagger-ui": "^1.9.3",
+    "fastify": "^4.20.0",
+    "fastify-plugin": "^4.5.1",
+    "mongoose": "^7.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.4.4",
+    "@types/pino": "^7.0.5",
+    "concurrently": "^9.2.1",
+    "dotenv": "^17.2.3",
+    "nodemon": "^3.1.11",
+    "pino-pretty": "^10.1.0",
+    "typescript": "^5.9.3"
+  }
+}
