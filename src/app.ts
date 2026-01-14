@@ -56,4 +56,8 @@ async function checkServerEnv(app: FastifyInstance){
         app.log.fatal('The environment variable responsible for administrators list is not set')
         process.exit(1)
     }
+    if(!process.env.BOT_TOKEN){
+        app.log.fatal('The environment variable responsible for bot token is not set')
+        process.exit(1)
+    }
 }

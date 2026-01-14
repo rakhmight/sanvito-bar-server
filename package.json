@@ -17,6 +17,7 @@
     "@fastify/static": "^6.10.2",
     "@fastify/swagger": "^8.8.0",
     "@fastify/swagger-ui": "^1.9.3",
+    "@telegram-apps/init-data-node": "^2.0.10",
     "fastify": "^4.20.0",
     "fastify-plugin": "^4.5.1",
     "mongoose": "^7.4.0"
