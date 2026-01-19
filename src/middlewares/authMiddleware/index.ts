@@ -6,17 +6,17 @@ import { parse, isValid } from '@telegram-apps/init-data-node';
 
 export default async function(req:FastifyRequest, rep:FastifyReply, done:HookHandlerDoneFunction){
     try {
-            const { initData }  = req.headers
+            const { initdata }  = req.headers
 
             const isInitDataValid = isValid(
-                initData as string,
+                initdata as string,
                 process.env.BOT_TOKEN!,
             );
             
-            if(!isInitDataValid) throw Error('no-auth')
+            if(!isInitDataValid) throw Error('un-auth')
 
-            const admins = process.env.DB_USER
-            const userID = parse(initData as string).user?.id
+            const admins = process.env.ADMINS
+            const userID = parse(initdata as string).user?.id
 
             if(!userID) throw Error('bad-req')
             if(!admins!.includes(''+userID)) throw Error('no-access')

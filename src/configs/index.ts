@@ -31,9 +31,9 @@ export const fastifyConfig = {
     logger: pino(
       transport
     ),
-    https: {
-      key: fs.readFileSync(path.join(__dirname, '..', './https/fastify.key')),
-      cert: fs.readFileSync(path.join(__dirname, '..', './https/fastify.cert'))
-    },
+    // https: {
+    //   key: fs.readFileSync(path.join(__dirname, '..', './https/fastify.key')),
+    //   cert: fs.readFileSync(path.join(__dirname, '..', './https/fastify.cert'))
+    // },
     bodyLimit: 500 * 1024 * 1024 // Default Limit set to 5000MB
 }

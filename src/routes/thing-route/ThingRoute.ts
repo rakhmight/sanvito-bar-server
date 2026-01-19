@@ -12,7 +12,12 @@ const ThingRoute: FastifyPluginAsync = async (fastify: FastifyInstance, options:
 
     fastify.post<RouteWithData<ReqData<Omit<ThingI, '_id'>>>>('/api/v1/things', { preHandler: authMiddleware } , async (req, rep) =>{
         try{
-            const thingData = await addThing(req.body.data)
+            let data = req.body.data;
+            if(typeof req.body === 'string'){{
+                data = JSON.parse(req.body).data
+            }}
+
+            const thingData = await addThing(data)
 
             return rep.code(200).send({ statusCode: 200, data: thingData })
         } catch (error) {
